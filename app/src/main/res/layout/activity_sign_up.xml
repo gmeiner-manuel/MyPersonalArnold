@@ -22,7 +22,7 @@
         app:srcCompat="@drawable/personalarnoldlogotransperent" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/txt_Email"
         android:layout_width="250dp"
         android:layout_height="59dp"
         android:layout_marginStart="99dp"
@@ -43,7 +43,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress3"
+        android:id="@+id/txt_Username"
         android:layout_width="250dp"
         android:layout_height="59dp"
         android:layout_marginStart="99dp"
@@ -64,7 +64,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress2"
+        android:id="@+id/txt_Password"
         android:layout_width="250dp"
         android:layout_height="59dp"
         android:layout_marginStart="99dp"
@@ -90,9 +90,9 @@
         android:layout_width="196dp"
         android:layout_height="66dp"
         android:layout_marginStart="96dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="70dp"
         android:layout_marginEnd="130dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="100dp"
         android:backgroundTint="#FFFFFF"
         android:onClick="onSignUp"
         android:text="Sign Up"
@@ -101,9 +101,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2"
+        app:layout_constraintTop_toBottomOf="@+id/txt_Password"
         app:layout_constraintVertical_bias="1.0" />
 
     <SeekBar
@@ -121,7 +121,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2"
+        app:layout_constraintTop_toBottomOf="@+id/txt_Password"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -137,6 +137,20 @@
         app:layout_constraintBottom_toTopOf="@+id/btn_signUp"
         app:layout_constraintEnd_toStartOf="@+id/seekBar2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_Password" />
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="157dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="166dp"
+        android:layout_marginBottom="32dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_signUp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
