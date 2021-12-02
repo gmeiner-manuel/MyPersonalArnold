@@ -3,13 +3,17 @@ package com.example.personalarnold;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.webianks.library.scroll_choice.ScrollChoice;
 
@@ -19,45 +23,49 @@ import java.util.List;
 public class SignUp extends AppCompatActivity {
 
     List<String> ages = new ArrayList<>();
-    Button btn_signUp;
-    TextView txt_email;
-    TextView txt_password;
+    EditText name;
+    EditText email;
+    EditText password;
+    Button buttonSignup, buttonNext;
+    SharedPreferences sp;
+    String nameStr, emailStr, passwordStr;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-        btn_signUp = findViewById(R.id.btn_signUp);
-        txt_email = findViewById(R.id.txt_email);
-        txt_password = findViewById(R.id.txt_password);
 
-        addData();
+        name = findViewById(R.id.txt_Username);
+        email = findViewById(R.id.txt_Email);
+        password = findViewById(R.id.txt_Password);
+        buttonSignup = findViewById(R.id.btn_signUp);
+        buttonNext = findViewById(R.id.btn_next);
 
-    }
+        sp = getSharedPreferences("MyUserPrefs", Context.MODE_PRIVATE);
 
-    public void addData() {
-        for (int i = 0; i < 100; i++) {
-            ages.add("" + i + "");
-        }
-    }
+        buttonSignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                nameStr = name.getText().toString();
+                emailStr = email.getText().toString();
+                passwordStr = password.getText().toString();
 
-    public void onSignUp(View view) {
-        if (btn_signUp.isPressed()) {
-            checkEmail();
-            checkPassword();
-            finish();
-        }
-    }
-    public void checkEmail() {
-        if (!txt_email.getText().toString().contains("@") && (!txt_email.getText().toString().contains("."))) {
-            txt_email.setTextColor(Integer.parseInt("#FF0000"));
-        }
-    }
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putString("name", nameStr);
+                editor.putString("email", emailStr);
+                editor.putString("password", passwordStr);
+                editor.commit();
+                Toast.makeText(SignUp.this, "Information Saved.", Toast.LENGTH_LONG).show();
+            }
+        });
 
-    public void checkPassword() {
-        if (txt_password.getText().length() < 8) {
-            txt_password.setTextColor(Integer.parseInt("#FF0000"));
-        }
+        buttonNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SignUp.this, DataDisplayPage.class);
+                startActivity(intent);
+            }
+        });
     }
 }
