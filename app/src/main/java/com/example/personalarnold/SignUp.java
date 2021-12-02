@@ -42,6 +42,7 @@ public class SignUp extends AppCompatActivity {
             passwordStr = password.getText().toString();
             ageStr = age.getContext().toString();
 
+            // Start Shared Preferences Code
             SharedPreferences.Editor editor = sp.edit();
             editor.putString("name", nameStr);
             editor.putString("email", emailStr);
@@ -49,7 +50,22 @@ public class SignUp extends AppCompatActivity {
             editor.putString("age", ageStr);
             editor.apply();
             Toast.makeText(SignUp.this, "Information Saved.", Toast.LENGTH_LONG).show();
+            // End Preferences Code
+
+
+            // TODO: Create Object and store values
+            // Object should look like:
+            // User user = new User(nameStr, emailStr, passwordStr, ageStr);
+            System.out.println(nameStr);
+            System.out.println(emailStr);
+            System.out.println(passwordStr);
+            System.out.println(ageStr);
+            // TODO: Save Object in File
+            // Pseudo-Code file.setText(file.currentText + user.toString);
+
+
         });
+
 
         buttonNext.setOnClickListener(v -> {
             Intent intent = new Intent(SignUp.this, DataDisplayPage.class);
