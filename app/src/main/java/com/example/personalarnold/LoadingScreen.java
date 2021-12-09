@@ -5,10 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.widget.Button;
-import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class LoadingScreen extends AppCompatActivity {
 
     private final int SPLASH_SCREEN_TIMEOUT = 3000;
 
@@ -20,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent homeIntent = new Intent(MainActivity.this, Loadingscreen.class);
+                Intent homeIntent = new Intent(LoadingScreen.this, MainActivityScreen.class);
                 startActivity(homeIntent);
                 finish();
             }

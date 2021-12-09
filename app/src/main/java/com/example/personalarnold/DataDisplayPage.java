@@ -14,10 +14,10 @@ public class DataDisplayPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.data);
         TextView t1, t2, t3, t4;
-        t1 = findViewById(R.id.textView1);
-        t2 = findViewById(R.id.textView2);
-        t3 = findViewById(R.id.textView3);
-        t4 = findViewById(R.id.textView4);
+        t1 = findViewById(R.id.txt_displayName);
+        t2 = findViewById(R.id.txt_displayEmail);
+        t3 = findViewById(R.id.txt_displayPassword);
+        t4 = findViewById(R.id.txt_displayAge);
         SharedPreferences sp = getApplicationContext().getSharedPreferences("MyUserPrefs", Context.MODE_PRIVATE);
         String name = sp.getString("name", "");
         String email = sp.getString("email", "");

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
-    tools:context=".SignUp">
+    tools:context=".SignUpScreen">
 
     <ImageView
         android:id="@+id/imageView"
@@ -67,8 +67,8 @@
         android:id="@+id/txt_Password"
         android:layout_width="250dp"
         android:layout_height="59dp"
-        android:layout_marginStart="99dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="106dp"
         android:layout_marginEnd="102dp"
         android:backgroundTint="#FFFFFF"
         android:ems="10"
@@ -89,10 +89,10 @@
         android:id="@+id/btn_signUp"
         android:layout_width="196dp"
         android:layout_height="66dp"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="130dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="110dp"
+        android:layout_marginBottom="85dp"
         android:backgroundTint="#FFFFFF"
         android:text="Sign Up"
         android:textColor="#000000"
@@ -100,43 +100,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_Password"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <SeekBar
-        android:id="@+id/sb_age"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="176dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="85dp"
-        android:layout_marginBottom="50dp"
-        android:max="10"
-        android:progress="3"
-        app:layout_constraintBottom_toTopOf="@+id/btn_signUp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_Password"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="81dp"
-        android:layout_marginTop="-5dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginBottom="46dp"
-        android:text="Age"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_signUp"
-        app:layout_constraintEnd_toStartOf="@+id/sb_age"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_Password" />
+        app:layout_constraintVertical_bias="0.966" />
 
     <Button
         android:id="@+id/btn_next"
@@ -151,5 +118,54 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_signUp" />
+
+    <Button
+        android:id="@+id/btn_selectBirthday"
+        android:layout_width="146dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="170dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="17dp"
+        android:backgroundTint="#FFFFFF"
+        android:fadingEdge="horizontal"
+        android:text="Select Birthday"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btn_signUp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_Password"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/txt_Date"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="79dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="46dp"
+        android:text="Date"
+        app:layout_constraintBottom_toTopOf="@+id/btn_signUp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_selectBirthday"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_Password" />
+
+    <TextView
+        android:id="@+id/txt_age"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="13dp"
+        android:text="Age"
+        app:layout_constraintBottom_toTopOf="@+id/btn_signUp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_selectBirthday"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_Date" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

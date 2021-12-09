@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
-            android:name=".SignUp"
+            android:name=".SignUpScreen"
             android:exported="false" />
         <activity
-            android:name=".Loadingscreen"
+            android:name=".MainActivityScreen"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".LoadingScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

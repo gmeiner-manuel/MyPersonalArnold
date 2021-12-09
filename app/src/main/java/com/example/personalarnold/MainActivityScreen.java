@@ -3,14 +3,13 @@ package com.example.personalarnold;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class Loadingscreen extends AppCompatActivity {
+public class MainActivityScreen extends AppCompatActivity {
 
     private Button btn_signIn;
     private TextView btn_signUp;
@@ -20,7 +19,7 @@ public class Loadingscreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_loading);
+        setContentView(R.layout.activity_sign_in);
         btn_signIn = (Button) findViewById(R.id.btn_signIn);
         btn_signUp = findViewById(R.id.btn_SignUp);
         txt_emailAddress = findViewById(R.id.txt_email);
@@ -34,7 +33,7 @@ public class Loadingscreen extends AppCompatActivity {
             new Handler().post(new Runnable() {
                 @Override
                 public void run() {
-                    Intent signUpIntent = new Intent(Loadingscreen.this, SignUp.class);
+                    Intent signUpIntent = new Intent(MainActivityScreen.this, SignUpScreen.class);
                     startActivity(signUpIntent);
                     finish();
                 }
