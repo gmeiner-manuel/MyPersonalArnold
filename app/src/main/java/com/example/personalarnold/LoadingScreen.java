@@ -2,6 +2,7 @@ package com.example.personalarnold;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -24,7 +25,7 @@ public class LoadingScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent homeIntent = new Intent(LoadingScreen.this, MainActivityScreen.class);
+                Intent homeIntent = new Intent(LoadingScreen.this, LoginScreen.class);
                 startActivity(homeIntent);
                 finish();
             }

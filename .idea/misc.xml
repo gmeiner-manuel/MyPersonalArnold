@@ -18,12 +18,22 @@
         <entry key="..\:/4AHIT/ITP2/WIDM/PersonalArnold3/app/src/main/res/layout/activity_sign_in.xml" value="0.25416666666666665" />
         <entry key="..\:/4AHIT/ITP2/WIDM/PersonalArnold3/app/src/main/res/layout/activity_sign_up.xml" value="0.264" />
         <entry key="..\:/4AHIT/ITP2/WIDM/PersonalArnold3/app/src/main/res/layout/data.xml" value="0.264" />
+        <entry key="..\:/Users/banda/AndroidStudioProjects/PersonalArnoldV2/app/src/main/res/layout/activity_dashboard.xml" value="0.12771739130434784" />
+        <entry key="..\:/Users/banda/AndroidStudioProjects/PersonalArnoldV2/app/src/main/res/layout/activity_sign_in.xml" value="0.1" />
+        <entry key="..\:/Users/banda/AndroidStudioProjects/PersonalArnoldV2/app/src/main/res/layout/activity_sign_up.xml" value="0.7318611987381703" />
+        <entry key="..\:/Users/banda/AndroidStudioProjects/PersonalArnoldV2/app/src/main/res/layout/new_signin.xml" value="0.12" />
+        <entry key="..\:/Users/banda/AndroidStudioProjects/PersonalArnoldV2/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_loading.xml" value="0.18704710144927536" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18704710144927536" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.299181503933309" />
         <entry key="app/src/main/res/layout/data.xml" value="0.165" />
       </map>
     </option>
+  </component>
+  <component name="JavadocGenerationManager">
+    <option name="OUTPUT_DIRECTORY" value="$USER_HOME$/Documents/javadoc" />
+    <option name="OTHER_OPTIONS" value="-sourcepath C:\Users\banda\AppData\Local\Android\Sdk\platforms\android-31\android.jar" />
+    <option name="OPTION_INCLUDE_LIBS" value="true" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
