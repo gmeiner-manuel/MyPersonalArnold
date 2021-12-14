@@ -10,8 +10,8 @@
 
     <TextView
         android:id="@+id/btn_SignUp2"
-        android:layout_width="161dp"
-        android:layout_height="36dp"
+        android:layout_width="71dp"
+        android:layout_height="48dp"
         android:layout_marginStart="4dp"
         android:onClick="onSignIn"
         android:text="Sign In"
@@ -20,7 +20,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.995" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView2"
@@ -31,10 +31,10 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.396"
+        app:layout_constraintHorizontal_bias="0.387"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.977" />
+        app:layout_constraintVertical_bias="0.964" />
 
     <ImageView
         android:id="@+id/imageView"
