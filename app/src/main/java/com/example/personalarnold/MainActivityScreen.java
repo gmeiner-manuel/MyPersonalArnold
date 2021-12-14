@@ -16,6 +16,11 @@ public class MainActivityScreen extends AppCompatActivity {
     private TextView txt_emailAddress;
     private TextView txt_password;
 
+    /**
+     * Method onCreate initializes the content on the view when the View is being displayed
+     * for the first time
+     * @param savedInstanceState is for loading Data
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,10 +29,13 @@ public class MainActivityScreen extends AppCompatActivity {
         btn_signUp = findViewById(R.id.btn_SignUp);
         txt_emailAddress = findViewById(R.id.txt_email);
         txt_password = findViewById(R.id.txt_password);
-
-        checkEmail();
     }
 
+    /**
+     * Method onSignUp is called when the Button btn_signUp is pressed.
+     * It starts a new Thread which then opens a new View.
+     * @param view
+     */
     public void onSignUp(View view) {
         if (btn_signUp.isPressed()) {
             new Handler().post(new Runnable() {
@@ -38,14 +46,6 @@ public class MainActivityScreen extends AppCompatActivity {
                     finish();
                 }
             });
-        }
-    }
-
-    public void checkEmail() {
-        String demoEmail;
-        demoEmail = "123.123@gmail.com";
-        if (txt_emailAddress.getText() == demoEmail) {
-            txt_emailAddress.setTextColor(Integer.parseInt("#006400"));
         }
     }
 }

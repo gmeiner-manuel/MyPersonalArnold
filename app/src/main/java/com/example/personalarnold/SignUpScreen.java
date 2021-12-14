@@ -28,8 +28,7 @@ public class SignUpScreen extends AppCompatActivity {
     EditText password;
     Button buttonSignup, buttonNext, buttonSelectBirthday;
     SharedPreferences sp;
-    String nameStr, emailStr, passwordStr, ageStr;
-    TextView txtAge, txtDate;
+    String nameStr, emailStr, passwordStr, ageStr, txtAge, txtDate;
 
 
     @Override
@@ -43,8 +42,6 @@ public class SignUpScreen extends AppCompatActivity {
         buttonSignup = findViewById(R.id.btn_signUp);
         buttonNext = findViewById(R.id.btn_next);
         buttonSelectBirthday = findViewById(R.id.btn_selectBirthday);
-        txtAge = findViewById(R.id.txt_age);
-        txtDate = findViewById(R.id.txt_Date);
 
         sp = getSharedPreferences("MyUserPrefs", Context.MODE_PRIVATE);
 
@@ -52,7 +49,7 @@ public class SignUpScreen extends AppCompatActivity {
             nameStr = name.getText().toString();
             emailStr = email.getText().toString();
             passwordStr = password.getText().toString();
-            ageStr = txtAge.getText().toString();
+            ageStr = txtAge;
 
             // Start Shared Preferences Code
             SharedPreferences.Editor editor = sp.edit();
@@ -83,12 +80,17 @@ public class SignUpScreen extends AppCompatActivity {
             }
         });
 
-
+        //When Button is pressed -> Opens a new Activity, in this case the DataDisplayPage
         buttonNext.setOnClickListener(v -> {
             Intent intent = new Intent(SignUpScreen.this, DataDisplayPage.class);
             startActivity(intent);
         });
 
+        /**
+         * When the Button buttonSelectBirthday is pressed -> Creates a Calendar Object and
+         * saves the Date as separate Integers - one for day, one for month and one for year.
+         * It then shows the content in the DatePickerDialog
+         */
         buttonSelectBirthday.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
@@ -104,6 +106,9 @@ public class SignUpScreen extends AppCompatActivity {
         });
     }
 
+    /**
+     * Creates a new DatePickerDialog which gets the Values of the Calendar
+     * **/
     private DatePickerDialog.OnDateSetListener dataPickerListener = new DatePickerDialog.OnDateSetListener() {
         @RequiresApi(api = Build.VERSION_CODES.N)
         @Override
@@ -113,11 +118,17 @@ public class SignUpScreen extends AppCompatActivity {
             c.set(Calendar.MONTH, month);
             c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
             String format = new SimpleDateFormat("dd MMM YYYY").format(c.getTime());
-            txtDate.setText(format);
-            txtAge.setText(Integer.toString(calculateAge(c.getTimeInMillis())));
+            txtDate = format;
+            txtAge = Integer.toString(calculateAge(c.getTimeInMillis()));
         }
     };
 
+    /**
+     * Calculates the Age using the inputs from the Calendar.
+     * @param date gets the value of the Calendar and gives it the
+     * TimeInMillis. It's a long value since it's a milli second value.
+     * @return
+     */
     @RequiresApi(api = Build.VERSION_CODES.N)
     public int calculateAge(long date) {
         Calendar dob = Calendar.getInstance();
@@ -133,8 +144,14 @@ public class SignUpScreen extends AppCompatActivity {
         return age;
     }
 
+    /**
+     * Checks the Age. If the Age is below 16, the user is not able to sign up.
+     * If the Age is above 16, the user will be able to sign up. The retun value
+     * is a boolean which is true when the user is old enough and false if not.
+     * @return
+     */
     public boolean checkAge() {
-        int age = Integer.parseInt(txtAge.getText().toString());
+        int age = Integer.parseInt(txtAge);
         boolean overSixteen;
         if (age >= 14) {
             overSixteen = true;

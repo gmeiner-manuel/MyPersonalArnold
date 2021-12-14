@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
+            android:name=".Dashboard"
+            android:exported="false" />
+        <activity
             android:name=".SignUpScreen"
             android:exported="false" />
         <activity
@@ -24,7 +27,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DataDisplayPage"/>
+        <activity android:name=".DataDisplayPage" />
     </application>
 
 </manifest>
