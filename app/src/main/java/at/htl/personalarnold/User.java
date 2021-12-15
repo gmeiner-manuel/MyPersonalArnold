@@ -1,4 +1,4 @@
-package com.example.personalarnold;
+package at.htl.personalarnold;
 
 import java.io.Serializable;
 

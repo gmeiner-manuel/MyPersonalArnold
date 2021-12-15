@@ -1,4 +1,4 @@
-package com.example.personalarnold;
+package at.htl.personalarnold;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.personalarnold.R;
 
 /**
  * Data is being displayed on this page.

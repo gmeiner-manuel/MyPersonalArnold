@@ -1,4 +1,4 @@
-package com.example.personalarnold;
+package at.htl.personalarnold;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,20 +16,21 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.personalarnold.R;
 
 import java.util.Date;
 
 public class SignUpScreen extends AppCompatActivity {
 
-    EditText name;
-    EditText email;
-    EditText password;
+    EditText name, email, password, repassword;
     TextView age;
     Button buttonSignup, buttonNext, buttonSelectBirthday;
     SharedPreferences sp;
-    String nameStr, emailStr, passwordStr, ageStr, txtAge, txtDate;
+    String nameStr, emailStr, passwordStr, repasswordStr, ageStr, txtAge, txtDate;
 
-    private final LoginCheck check = new LoginCheck();
+    private final DataCheck check = new DataCheck();
 
 
     @Override
@@ -41,6 +42,7 @@ public class SignUpScreen extends AppCompatActivity {
         name = findViewById(R.id.txt_Username);
         email = findViewById(R.id.txt_Email);
         password = findViewById(R.id.txt_Password);
+        repassword = findViewById(R.id.txt_Repassword);
         age = findViewById(R.id.txt_Age);
         buttonSignup = findViewById(R.id.btn_signUp);
         //buttonNext = findViewById(R.id.btn_next);
@@ -66,25 +68,10 @@ public class SignUpScreen extends AppCompatActivity {
         nameStr = name.getText().toString();
         emailStr = email.getText().toString();
         passwordStr = password.getText().toString();
+        repasswordStr = repassword.getText().toString();
         ageStr = txtAge;
 
-        //Checks if the Name and Email field are empty or not
-        if(nameStr.isEmpty()){
-            name.setError("This field can not be empty");
-        }
-        if(emailStr.isEmpty()){
-            name.setError("This field can not be empty");
-        }
-        //checks if the password fullfils every conditiom
-        //if true User gets registered, else Error
-        if(check.checkSignUpPW(passwordStr)){
-            Ser.writeObject(new User(emailStr, nameStr, passwordStr, Integer.parseInt(ageStr)), getApplicationContext());
-            System.out.println(Ser.readObject(getApplicationContext()).toString());
-        }
-        else{
-            System.out.println("Something is missing");
-            password.setError("Your passwords needs:\nAt least 8 characters\nNumeric Number\nSymbol");
-        }
+        checkField();
 
         /*
         // Start Shared Preferences Code
@@ -107,13 +94,14 @@ public class SignUpScreen extends AppCompatActivity {
         System.out.println(ageStr);
         // TODO: Save Object in File
         // Pseudo-Code file.setText(file.currentText + user.toString);
-         */
+
         if (checkAge() == true) {
             System.out.println("User is over 16! Sign him Up");
         }
         else if (checkAge() == false) {
             System.out.println("User is under 16! Do NOT Sign him Up");
         }
+         */
     }
 
     /**
@@ -159,6 +147,49 @@ public class SignUpScreen extends AppCompatActivity {
             age.setText("Age " + txtAge);  //displays the age
         }
     };
+
+    /**
+     * Checks if the input fields are empty/ checks if password matches conditions
+     * Also sets an ErrorIcon if something is false
+     */
+    public void checkField(){
+        //Checks if textfield Name is empty
+        if(nameStr.isEmpty()){
+            name.setError("This field can not be empty!");
+        }
+        //Checks if textfield E-Mail is empty
+        if(emailStr.isEmpty()){
+            email.setError("This field can not be empty!");
+        }
+        //Checks if the reentered password equals the password
+        if(!passwordStr.equals(repasswordStr)){
+            repassword.setError("Reentered Password does not match with Password!");
+        }
+        //checks if the age is null
+        if(ageStr == null){
+            age.setText("Age :(");
+        }
+
+        //checks if the password fullfils every conditiom
+        //if true User gets registered, else Error
+        if(check.checkSignUpPW(passwordStr)){
+            //Checks if reentered password and password match
+            if(passwordStr.equals(repasswordStr) && !nameStr.isEmpty() && !emailStr.isEmpty() && ageStr != null){
+                Ser.writeObject(new User(emailStr, nameStr, passwordStr, Integer.parseInt(ageStr)), getApplicationContext());
+                System.out.println(Ser.readObject(getApplicationContext()).toString());
+                Toast.makeText(SignUpScreen.this, "Successful Signup", Toast.LENGTH_LONG).show();
+            }
+            /*
+            //redirects to the login Screen
+            Intent intent = new Intent(SignUpScreen.this, Dashboard.class);
+            startActivity(intent);
+             */
+        }
+        else{
+            System.out.println("Something is missing");
+            password.setError("Your passwords needs:\nAt least 8 characters\nNumeric Number\nSymbol (!, ?, $, etc.");
+        }
+    }
 
     /**
      * Calculates the Age using the inputs from the Calendar.

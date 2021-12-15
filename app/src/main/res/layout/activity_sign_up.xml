@@ -5,22 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
-    tools:context=".SignUpScreen">
+    tools:context="at.htl.personalarnold.SignUpScreen">
 
 
     <TextView
         android:id="@+id/btn_SignUp2"
-        android:layout_width="71dp"
-        android:layout_height="48dp"
+        android:layout_width="59dp"
+        android:layout_height="25dp"
         android:layout_marginStart="4dp"
         android:onClick="onSignIn"
         android:text="Sign In"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/textView2"
         app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/textView2"
@@ -38,17 +39,13 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="464dp"
-        android:layout_height="340dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginBottom="410dp"
+        android:layout_width="401dp"
+        android:layout_height="308dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/personalarnoldlogotransperent" />
 
     <Button
@@ -68,26 +65,6 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        android:layout_width="250dp"
-        android:layout_height="46dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.674"
-        app:passwordToggleEnabled="true">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txt_Password"
-            android:layout_width="250dp"
-            android:layout_height="48dp"
-            android:hint="Password"
-            android:inputType="textPassword" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout2"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
@@ -96,7 +73,7 @@
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.573">
+        app:layout_constraintVertical_bias="0.532">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txt_Email"
@@ -112,8 +89,10 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView">
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.454">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txt_Username"
@@ -127,27 +106,66 @@
         android:id="@+id/imageButton2"
         android:layout_width="49dp"
         android:layout_height="48dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="40dp"
         android:backgroundTint="#00FFFFFF"
         android:onClick="onSelectBirthday"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txt_Age"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.762"
+        app:layout_constraintVertical_bias="0.781"
         app:srcCompat="@android:drawable/ic_menu_my_calendar"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/txt_Age"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="66dp"
+        android:layout_height="27dp"
         android:text="Age"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.21"
+        app:layout_constraintHorizontal_bias="0.228"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.755" />
+        app:layout_constraintVertical_bias="0.769" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.706"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txt_Repassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Reenter Password"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="250dp"
+        android:layout_height="58dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.615"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txt_Password"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Password"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

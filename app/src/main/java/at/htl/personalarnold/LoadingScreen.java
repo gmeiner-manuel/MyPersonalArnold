@@ -1,4 +1,4 @@
-package com.example.personalarnold;
+package at.htl.personalarnold;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.example.personalarnold.R;
 
 public class LoadingScreen extends AppCompatActivity {
 

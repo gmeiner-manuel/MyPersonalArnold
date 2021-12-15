@@ -1,4 +1,4 @@
-package com.example.personalarnold;
+package at.htl.personalarnold;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.personalarnold.R;
+
 public class LoginScreen extends AppCompatActivity {
 
     private Button btn_signIn;
@@ -17,7 +19,7 @@ public class LoginScreen extends AppCompatActivity {
     private TextView txt_email;
     private TextView txt_password;
 
-    private final LoginCheck check = new LoginCheck();
+    private final DataCheck check = new DataCheck();
 
     /**
      * Method onCreate initializes the content on the view when the View is being displayed
