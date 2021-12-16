@@ -1,4 +1,4 @@
-package at.htl.personalarnold;
+package at.htl.personalarnold.controller;
 
 import android.content.Context;
 import android.content.SharedPreferences;

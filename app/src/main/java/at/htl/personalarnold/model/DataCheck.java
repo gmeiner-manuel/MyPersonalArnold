@@ -1,4 +1,4 @@
-package at.htl.personalarnold;
+package at.htl.personalarnold.model;
 
 import android.content.Context;
 

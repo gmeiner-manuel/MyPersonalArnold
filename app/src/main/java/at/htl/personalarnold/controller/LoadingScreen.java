@@ -1,4 +1,4 @@
-package at.htl.personalarnold;
+package at.htl.personalarnold.controller;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,7 +12,7 @@ import com.example.personalarnold.R;
 public class LoadingScreen extends AppCompatActivity {
 
     //Time to be passed until opening the new screen
-    private final int SPLASH_SCREEN_TIMEOUT = 3000;
+    private final int SPLASH_SCREEN_TIMEOUT = 2000;
 
     /**
      * Initializes the View and sets it

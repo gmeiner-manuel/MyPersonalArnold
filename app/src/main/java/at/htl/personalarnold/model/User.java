@@ -1,4 +1,4 @@
-package at.htl.personalarnold;
+package at.htl.personalarnold.model;
 
 import java.io.Serializable;
 

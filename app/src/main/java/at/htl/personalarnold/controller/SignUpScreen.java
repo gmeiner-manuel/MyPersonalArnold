@@ -1,4 +1,4 @@
-package at.htl.personalarnold;
+package at.htl.personalarnold.controller;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +21,10 @@ import android.widget.Toast;
 import com.example.personalarnold.R;
 
 import java.util.Date;
+
+import at.htl.personalarnold.model.DataCheck;
+import at.htl.personalarnold.model.Ser;
+import at.htl.personalarnold.model.User;
 
 public class SignUpScreen extends AppCompatActivity {
 
@@ -178,6 +182,8 @@ public class SignUpScreen extends AppCompatActivity {
                 Ser.writeObject(new User(emailStr, nameStr, passwordStr, Integer.parseInt(ageStr)), getApplicationContext());
                 System.out.println(Ser.readObject(getApplicationContext()).toString());
                 Toast.makeText(SignUpScreen.this, "Successful Signup", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(SignUpScreen.this, DashboardScreen.class);
+                startActivity(intent);
             }
             /*
             //redirects to the login Screen

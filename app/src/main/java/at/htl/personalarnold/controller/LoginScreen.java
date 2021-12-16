@@ -1,4 +1,4 @@
-package at.htl.personalarnold;
+package at.htl.personalarnold.controller;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.personalarnold.R;
+
+import at.htl.personalarnold.model.DataCheck;
 
 public class LoginScreen extends AppCompatActivity {
 
@@ -60,7 +62,7 @@ public class LoginScreen extends AppCompatActivity {
      */
     public void onSignIn(View view){
         if(check.checkLoginData(txt_email.getText().toString(), txt_password.getText().toString(), getApplicationContext())){
-            Intent intent = new Intent(LoginScreen.this, Dashboard.class);
+            Intent intent = new Intent(LoginScreen.this, DashboardScreen.class);
             startActivity(intent);
             Toast.makeText(LoginScreen.this, "Successful login", Toast.LENGTH_LONG).show();
         }

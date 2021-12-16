@@ -10,16 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
-            android:name="at.htl.personalarnold.Dashboard"
+            android:name="at.htl.personalarnold.controller.DashboardScreen"
             android:exported="false" />
         <activity
-            android:name="at.htl.personalarnold.SignUpScreen"
+            android:name="at.htl.personalarnold.controller.SignUpScreen"
             android:exported="false" />
         <activity
-            android:name="at.htl.personalarnold.LoginScreen"
+            android:name="at.htl.personalarnold.controller.LoginScreen"
             android:exported="false" />
         <activity
-            android:name="at.htl.personalarnold.LoadingScreen"
+            android:name="at.htl.personalarnold.controller.LoadingScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,7 +27,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="at.htl.personalarnold.DataDisplayPage" />
+        <activity android:name="at.htl.personalarnold.controller.DataDisplayPage" />
     </application>
 
 </manifest>

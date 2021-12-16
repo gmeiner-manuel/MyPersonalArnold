@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#020202"
-    tools:context="at.htl.personalarnold.LoginScreen" >
+    tools:context="at.htl.personalarnold.controller.LoginScreen" >
 
     <Button
         android:id="@+id/btn_signIn"

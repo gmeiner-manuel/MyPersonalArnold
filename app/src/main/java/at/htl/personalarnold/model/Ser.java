@@ -1,4 +1,4 @@
-package at.htl.personalarnold;
+package at.htl.personalarnold.model;
 
 import android.content.Context;
 
@@ -10,7 +10,7 @@ import java.io.ObjectOutputStream;
 
 public class Ser {
     /**
-     *
+     * Saves the User Data in a .ser file, where only the app has access to
      * @param user User object that gets created in the SignUp screen
      * @param context The Application.Context of the App
      *
@@ -33,7 +33,7 @@ public class Ser {
     }
 
     /**
-     *
+     * Reads the saved .ser file
      * @param context The Application.Context of the App
      * @return returns the read .ser File as an User object
      */
