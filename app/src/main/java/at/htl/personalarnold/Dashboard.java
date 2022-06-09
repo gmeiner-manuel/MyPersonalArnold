@@ -8,7 +8,7 @@ import android.widget.TextView;
 import com.example.personalarnold.R;
 
 public class Dashboard extends AppCompatActivity {
-    TextView name;
+    private TextView name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

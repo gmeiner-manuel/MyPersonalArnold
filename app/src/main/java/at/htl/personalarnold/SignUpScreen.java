@@ -178,6 +178,8 @@ public class SignUpScreen extends AppCompatActivity {
                 Ser.writeObject(new User(emailStr, nameStr, passwordStr, Integer.parseInt(ageStr)), getApplicationContext());
                 System.out.println(Ser.readObject(getApplicationContext()).toString());
                 Toast.makeText(SignUpScreen.this, "Successful Signup", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(SignUpScreen.this, Dashboard.class);
+                startActivity(intent);
             }
             /*
             //redirects to the login Screen

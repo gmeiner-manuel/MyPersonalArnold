@@ -6,8 +6,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.personalarnold.R;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
 
 public class LoadingScreen extends AppCompatActivity {
 
@@ -22,6 +32,14 @@ public class LoadingScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        TextView txt_quote = findViewById(R.id.txt_quotes);
+
+        MotivationQuotes quotes = new MotivationQuotes(getApplicationContext());
+
+        String rdmQuote = quotes.getQuotes();
+
+        txt_quote.setText(rdmQuote);
 
         //Runs a new Thread which switches to another view
         new Handler().postDelayed(new Runnable() {
